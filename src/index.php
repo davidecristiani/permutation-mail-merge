@@ -1,6 +1,6 @@
 <?php
 
-$base_text = implode( '\n', [
+$base_text = implode( "\n", [
 	"Dear manager,",
 	"This a possible combination of the new work team.",
 	"The team leader will be [contact_placeholder].",
@@ -30,16 +30,16 @@ function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 
 
 	$start_position_of_first_placeholder_of_base_text = strpos( $base_text, $placeholder );
-	$length_of_placeholder = strlen( $placeholder );
-	$assembled_texts  = [];
+	$length_of_placeholder                            = strlen( $placeholder );
+	$assembled_texts                                  = [];
 
 	// Each contact will be inserted in the first free position marked with a placeholder
 	foreach ( $contacts as $contact ) {
 
-		$assembled_text            = substr_replace( $base_text, $contact, $start_position_of_first_placeholder_of_base_text, $length_of_placeholder );
+		$assembled_text = substr_replace( $base_text, $contact, $start_position_of_first_placeholder_of_base_text, $length_of_placeholder );
 
 		// Other free positions in $assembled_text will be filled by other contacts recalling the function recursively
-		$other_contacts = array_diff($contacts, [$contact]);
+		$other_contacts            = array_diff( $contacts, [ $contact ] );
 		$recursive_assembled_texts = permutation_mail_merge( $assembled_text, $placeholder, $other_contacts );
 		$assembled_texts           = array_merge( $assembled_texts, $recursive_assembled_texts );
 
@@ -56,7 +56,7 @@ function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 }
 
 function print_assembled_texts( $base_text, $placeholder, $contacts, $assembled_texts ) {
-	
+
 	print( "<h1>Permutation Mail Merge</h1>" );
 
 	print( "<h3>Base Text</h3>" );

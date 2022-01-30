@@ -10,9 +10,9 @@ The output will therfore be be a set of  **M** (**M**=**N!**) mails.
 Each `position` will be marked in the `base_text` by a `placeholder`.
 
 ### Use Case
-The use case is finding all the possible work teams of 5 `contacts` (so **N=5**) and to produce the mails that present each team.
+The use case is finding all the possible work teams of 5 `contacts` (so **N=5**) and producing the mails that present each team.
 
-The draft of the mail with a description of work team is the `base_text` where each `contact` `position` is marked by a `placeholder`.
+The draft of the mail with a description of work team is the `base_text` where each `contact` role `position` is marked by a `placeholder`.
 
 The output is a set of 120 mails (so **M=120**), that will be returned as an array `assembled_texts`.
 
@@ -27,7 +27,7 @@ The source of the program is in the [/src/index.php](https://github.com/davidecr
 You can see a [static version of the output of the program](https://davidecristiani.github.io/permutation-mail-merge/) (formatted as a valid HTML) on a GitHub Pages site.
 
 #### About Docker containers
-A Docker Compose configuration (stack: "nginx" and "php-fpm") is included 
+A Docker Compose configuration (stack: "nginx" and "php-fpm") is included in the repository
 to allow you to execute the program without using your web server.
 
 To execute the program with Docker Compose:

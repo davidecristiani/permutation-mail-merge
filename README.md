@@ -1,25 +1,25 @@
 # Permutation Mail Merge
 **Permutation Mail Merge** is yet another example of recursion in PHP to achieve a permutation (with order and without repetition).
 
-The selected use case is a [Mail Merge](https://en.wikipedia.org/wiki/Mail_merge), which is an operation to combine a text (which we'll call `text_base`)
-with **N** `contacts`, inserting the `contact` in a `position` specified by `placeholder`.
+The selected use case is a customized version of [Mail Merge](https://en.wikipedia.org/wiki/Mail_merge), which is an operation to combine a text (which we'll call `text_base`)
+with **N** `contacts`, inserting the `contact` in a `position` specified by a `placeholder`.
 
-In our case, instead of having just **1** `placeholder` in the `base_text` as in the classical Mail Merge,
+In our case, instead of having just **1** `placeholder` in the `base_text`, as in the classical Mail Merge,
 we will have **N** `placeholders` in the `base_text`. 
-The output will be a set of  **M** letters. 
+The output will therfore be be a set of  **M** (**M**=**N!**) mails. 
 Each `position` will be marked in the `base_text` by a `placeholder`.
 
 ### Use Case
-The use case is to find all the possible work teams of 5 `contacts` (so **N=5**) and to produce the letters that present each team.
+The use case is finding all the possible work teams of 5 `contacts` (so **N=5**) and to produce the mails that present each team.
 
-The draft of the letter with a description of team is the `base_text` where each `contact` `position` is marked by a `placeholder`.
+The draft of the mail with a description of work team is the `base_text` where each `contact` `position` is marked by a `placeholder`.
 
-The output is a set of 120 letters (so **M=120**), that will be returned as an array `assembled_texts`.
+The output is a set of 120 mails (so **M=120**), that will be returned as an array `assembled_texts`.
 
 ### Technical notes
 The program is educational; it's written using the programming language PHP and the output is pure HTML.
 
-All the words marked as code (`like this`) in this README are declared as variables in the program.
+All the words marked as code in this README are declared as variables in the program.
 If a word is plural (with a final "s") it's an indication that the variable is an array.
 
 The source of the program is in the [/src/index.php](https://github.com/davidecristiani/permutation-mail-merge/blob/main/src/index.php) file.

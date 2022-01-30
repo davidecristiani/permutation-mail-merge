@@ -36,7 +36,12 @@ function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 
 		$assembled_text            = substr_replace( $base_text, $contact, $start_position_of_first_placeholder_of_base_text, $length_of_placeholder );
 
-		// TODO This function will recursively call itself
+		// Other free positions in $assembled_text will be filled by other contacts recalling the function recursively
+		$other_contacts = array_diff($contacts, [$contact]);
+		$recursive_assembled_texts = permutation_mail_merge( $assembled_text, $placeholder, $other_contacts );
+		$assembled_texts           = array_merge( $assembled_texts, $recursive_assembled_texts );
+
+		// TODO This function will return complete assembled texts
 
 	}
 

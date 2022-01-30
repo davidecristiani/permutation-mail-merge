@@ -15,8 +15,19 @@ The result is a set of all possible teams, i.e., an array  **assembled_texts**.
 ###Technical notes
 The program is educational and is written in the programming language PHP.
 
-The program is included in the index.php file.
+The program is included in the _/src/index.php_ file.
 
-All the words you see in this README in this will be found with the same name in the form of variables in the program.
-If the word is a plural (with a final "s") it is an indication that the variable is an array.
-A docker configuration is included to allow you to run the file without installing it on a server.
+All the words you see in bold in this README will be found with the same name as variables in the program.
+If a word is a plural (with a final "s") it's an indication that the variable is an array.
+
+A Docker Compose "nginx"/"php-fpm" configuration is included 
+to allow you to run the file without using your own web server.
+
+To execute the program with Docker Compose:
+
+- Install and activate Docker (if you haven't already)
+- Open the terminal
+- Execute a `cd` command the main directory (the directory that contains the file _docker-compose.yml_).
+- Execute the command `docker-compose up`
+- Open your browser and go to the address  [http://localhost](http://localhost)
+

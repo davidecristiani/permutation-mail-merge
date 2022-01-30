@@ -57,6 +57,12 @@ function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 
 function print_assembled_texts( $base_text, $placeholder, $contacts, $assembled_texts ) {
 
+	print( "<!DOCTYPE html>" );
+	print( "<html lang='en'>" );
+	print( "<head><title>Permutation Mail Merge</title> <meta charset='UTF-8'></head>" );
+
+	print( "<body>" );
+
 	print( "<h1>Permutation Mail Merge</h1>" );
 
 	print( "<h3>Base Text</h3>" );
@@ -68,15 +74,18 @@ function print_assembled_texts( $base_text, $placeholder, $contacts, $assembled_
 	print( "<h3>Contacts</h3>" );
 	print( "<ul>" );
 	foreach ( $contacts as $contact ) {
-		print( "<li><pre>" . $contact . "<pre></li>" );
+		print( "<li><pre>" . $contact . "</pre></li>" );
 	}
 	print( "</ul>" );
 
 	print '<h1>Assembled Texts</h1>';
 	print( "<ol>" );
 	foreach ( $assembled_texts as $assembled_text ) {
-		print( "<li><pre>" . $assembled_text . "<pre></li>" );
+		print( "<li><pre>" . $assembled_text . "</pre></li>" );
 	}
 	print( "</ol>" );
+
+	print( "</body>" );
+	print( "</html>" );
 
 }

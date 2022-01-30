@@ -19,9 +19,9 @@ The result is a set of all possible teams, that will be returned as an array  **
 ### Technical notes
 The program is educational and is written in the programming language PHP.
 
-The program is included in the _/src/index.php_ file.
+The program is contained in the [_/src/index.php_](https://github.com/davidecristiani/permutation-mail-merge/blob/main/src/index.php) file.
 
-You will find all the words marked in bold in this README as variables in the program.
+All the words marked in bold in this README are declared as variables in the program.
 
 If a word is a plural (with a final "s") it's an indication that the variable is an array.
 

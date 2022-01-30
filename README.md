@@ -1,18 +1,18 @@
 # Permutation Mail Merge
 **Permutation Mail Merge** is yet another example of recursion in PHP to achieve a permutation (with order and without repetition).
 
-The selected use case is a Mail Merge, which is an operation to combine a text (which we'll call `text_base`)
-with **N** `contacts`, creating an array of `assembled_text` of length **M**.
+The selected use case is a [Mail Merge](https://en.wikipedia.org/wiki/Mail_merge), which is an operation to combine a text (which we'll call `text_base`)
+with **N** `contacts`, inserting the `contact` in a `position` specified by `placeholder`.
 
-In our case, instead of having only one position for each `contact` in the `base_text` as the classical Mail Merge,
-we will have **N** `positions` in the `base_text`.
-
+In our case, instead of having just **1** `placeholder` in the `base_text` as in the classical Mail Merge,
+we will have **N** `placeholders` in the `base_text`. 
+The output will be a set of  **M** letters. 
 Each `position` will be marked in the `base_text` by a `placeholder`.
 
 ### Use Case
 The use case is to find all the possible work teams of 5 `contacts` (so **N=5**) and to produce the letters that present each team.
 
-The draft of the letter that describes the team is the `base_text` where each `contact` `position` is marked by a `placeholder`.
+The draft of the letter with a description of team is the `base_text` where each `contact` `position` is marked by a `placeholder`.
 
 The output is a set of 120 letters (so **M=120**), that will be returned as an array `assembled_texts`.
 
@@ -41,5 +41,5 @@ To execute the program with Docker Compose:
 ### Credits
 - Thanks to Hackmath website for the recap of the [theoretical component of statistics](https://www.hackmath.net/en/calculator/combinations-and-permutations?n=5&k=5&order=1&repeat=0).  
 - Thanks to Jesús Manuel Vargas for his [docker-compose-php-stack](https://github.com/jmvargas/docker-compose-php-stack) that I have [forked and rewrited](https://github.com/davidecristiani/permutation-mail-merge/commit/adef51c5b43f3b90694bb351674e2d7a45bcfca5).
-
+- Thanks to W3C Validator for the [validation of the HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdavidecristiani.github.io%2Fpermutation-mail-merge%2F)
 

@@ -16,6 +16,8 @@ $contacts = [ "Yu", "John", "Tony", "Maria", "Rakshith" ];
 
 $assembled_texts = permutation_mail_merge( $base_text, $placeholder, $contacts );
 
+print_assembled_texts( $base_text, $placeholder, $contacts, $assembled_texts );
+
 function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 
 	$amount_of_placeholders_in_base_text = substr_count( $base_text, $placeholder );
@@ -54,8 +56,27 @@ function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 }
 
 function print_assembled_texts( $base_text, $placeholder, $contacts, $assembled_texts ) {
+	
+	print( "<h1>Permutation Mail Merge</h1>" );
 
-	// TODO This function will print the input parameters as a proper html page
-	print '';
+	print( "<h3>Base Text</h3>" );
+	print( "<pre>" . $base_text . "</pre>" );
+
+	print( "<h3>Placeholder</h3>" );
+	print( "<pre>" . $placeholder . "</pre>" );
+
+	print( "<h3>Contacts</h3>" );
+	print( "<ul>" );
+	foreach ( $contacts as $contact ) {
+		print( "<li><pre>" . $contact . "<pre></li>" );
+	}
+	print( "</ul>" );
+
+	print '<h1>Assembled Texts</h1>';
+	print( "<ol>" );
+	foreach ( $assembled_texts as $assembled_text ) {
+		print( "<li><pre>" . $assembled_text . "<pre></li>" );
+	}
+	print( "</ol>" );
 
 }

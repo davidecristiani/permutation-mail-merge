@@ -26,7 +26,20 @@ function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 		throw new Exception( "The amount of placeholders in the base_text is different from the amount of contacts" );
 	}
 
-	// TODO This function will recursively call itself
+
+	$start_position_of_first_placeholder_of_base_text = strpos( $base_text, $placeholder );
+	$length_of_placeholder = strlen( $placeholder );
+	$assembled_texts  = [];
+
+	// Each contact will be inserted in the first free position marked with a placeholder
+	foreach ( $contacts as $contact ) {
+
+		$assembled_text            = substr_replace( $base_text, $contact, $start_position_of_first_placeholder_of_base_text, $length_of_placeholder );
+
+		// TODO This function will recursively call itself
+
+	}
+
 	return [];
 
 }

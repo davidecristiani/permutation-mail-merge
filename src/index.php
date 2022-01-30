@@ -18,6 +18,14 @@ $assembled_texts = permutation_mail_merge( $base_text, $placeholder, $contacts )
 
 function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 
+	$amount_of_placeholders_in_base_text = substr_count( $base_text, $placeholder );
+	$amount_of_contacts                  = count( $contacts );
+
+	if ( $amount_of_placeholders_in_base_text != $amount_of_contacts ) {
+		// The permutation will work only if the amount of placeholders in the base_text is equal to the amount of contacts
+		throw new Exception( "The amount of placeholders in the base_text is different from the amount of contacts" );
+	}
+
 	// TODO This function will recursively call itself
 	return [];
 

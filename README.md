@@ -38,3 +38,8 @@ To execute the program with Docker Compose:
 - Execute the command `docker-compose up`
 - Open your browser and go to the address  [http://localhost](http://localhost)
 
+### Credits
+- Thanks to Hackmath website for the recap of the [theoretical component of statistics](https://www.hackmath.net/en/calculator/combinations-and-permutations?n=5&k=5&order=1&repeat=0).  
+- Thanks to Jesús Manuel Vargas for his [docker-compose-php-stack](https://github.com/jmvargas/docker-compose-php-stack) that I have [forked and rewrited](https://github.com/davidecristiani/permutation-mail-merge/commit/adef51c5b43f3b90694bb351674e2d7a45bcfca5).
+
+

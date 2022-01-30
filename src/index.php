@@ -41,11 +41,15 @@ function permutation_mail_merge( $base_text, $placeholder, $contacts ) {
 		$recursive_assembled_texts = permutation_mail_merge( $assembled_text, $placeholder, $other_contacts );
 		$assembled_texts           = array_merge( $assembled_texts, $recursive_assembled_texts );
 
-		// TODO This function will return complete assembled texts
+		// Each assembled text will be inserted in the assembled texts array only if all placeholders have been replaced
+		$start_position_of_first_placeholder_of_assembled_text = strpos( $assembled_text, $placeholder );
+		if ( $start_position_of_first_placeholder_of_assembled_text === false ) {
+			$assembled_texts[] = $assembled_text;
+		}
 
 	}
 
-	return [];
+	return $assembled_texts;
 
 }
 

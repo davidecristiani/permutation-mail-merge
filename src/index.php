@@ -2,15 +2,15 @@
 
 $base_text = implode( "\n", [
 	"Dear manager,",
-	"This a possible combination of the new work team.",
-	"The team leader will be [contact_placeholder].",
-	"Engineering will be carried out by [contact_placeholder].",
-	"The product manager is a role for [contact_placeholder].",
-	"The online marketer will be [contact_placeholder].",
-	"Our account manager that will keep in touch with customer will be [contact_placeholder].",
+	"This is a possible combination of the new work team.",
+	"The team leader will be *|contact_placeholder|*.",
+	"Engineering will be carried out by *|contact_placeholder|*.",
+	"Product manager is a role suitable for *|contact_placeholder|*.",
+	"The online marketer will be *|contact_placeholder|*.",
+	"Our account manager that will keep in touch with customers will be *|contact_placeholder|*.",
 ] );
 
-$placeholder = "[contact_placeholder]";
+$placeholder = "*|contact_placeholder|*";
 
 $contacts = [ "Yu", "John", "Tony", "Maria", "Rakshith" ];
 

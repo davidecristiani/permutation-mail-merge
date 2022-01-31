@@ -1,25 +1,29 @@
 # Permutation Mail Merge
-**Permutation Mail Merge** is yet another example of recursion in PHP to achieve a permutation (with order and without repetition).
+**Permutation Mail Merge** is yet another example of recursion in PHP to achieve permutation (with order and without repetition).
 
-The selected use case is a [Mail Merge](https://en.wikipedia.org/wiki/Mail_merge), which is an operation to combine a text (which we'll call `text_base`)
-with **N** `contacts`, inserting the `contact` in a `position` specified by `placeholder`.
+The selected use case is a customized version of [Mail Merge](https://en.wikipedia.org/wiki/Mail_merge), which is an operation that combine a text (which we'll call `text_base`)
+with **N** `contacts`, inserting the `contact` in a `position` specified by a `placeholder`.
 
-In our case, instead of having just **1** `placeholder` in the `base_text` as in the classical Mail Merge,
-we will have **N** `placeholders` in the `base_text`. 
-The output will be a set of  **M** letters. 
-Each `position` will be marked in the `base_text` by a `placeholder`.
+In our case, instead of having just **1** `placeholder` in the `base_text`, as in the classical Mail Merge,
+we have **N** `placeholders` in the `base_text`. 
+The output is therfore a set of  **M** mails (**M**=**N!**). 
+Each `position` is marked in the `base_text` by a `placeholder`.
+
+***
 
 ### Use Case
-The use case is to find all the possible work teams of 5 `contacts` (so **N=5**) and to produce the letters that present each team.
+The use case is about finding all the possible work teams of 5 `contacts` (so **N=5**) and producing the mails that present each team.
 
-The draft of the letter with a description of team is the `base_text` where each `contact` `position` is marked by a `placeholder`.
+The draft of the mail with a description of the work team is the `base_text` where each `contact` role `position` is marked by a `placeholder`.
 
-The output is a set of 120 letters (so **M=120**), that will be returned as an array `assembled_texts`.
+The output is a set of 120 mails (so **M=120**), that will be returned as an array `assembled_texts`.
+
+***
 
 ### Technical notes
 The program is educational; it's written using the programming language PHP and the output is pure HTML.
 
-All the words marked as code (`like this`) in this README are declared as variables in the program.
+All the words marked as code in this README are declared as variables in the program.
 If a word is plural (with a final "s") it's an indication that the variable is an array.
 
 The source of the program is in the [/src/index.php](https://github.com/davidecristiani/permutation-mail-merge/blob/main/src/index.php) file.
@@ -27,7 +31,7 @@ The source of the program is in the [/src/index.php](https://github.com/davidecr
 You can see a [static version of the output of the program](https://davidecristiani.github.io/permutation-mail-merge/) (formatted as a valid HTML) on a GitHub Pages site.
 
 #### About Docker containers
-A Docker Compose configuration (stack: "nginx" and "php-fpm") is included 
+A Docker Compose configuration (stack: "nginx" and "php-fpm") is included in the repository
 to allow you to execute the program without using your web server.
 
 To execute the program with Docker Compose:
@@ -37,6 +41,8 @@ To execute the program with Docker Compose:
 - Execute a `cd` command in the main directory (the directory that contains the file _docker-compose.yml_).
 - Execute the command `docker-compose up`
 - Open your browser and go to the address  [http://localhost](http://localhost)
+
+***
 
 ### Credits
 - Thanks to Hackmath website for the recap of the [theoretical component of statistics](https://www.hackmath.net/en/calculator/combinations-and-permutations?n=5&k=5&order=1&repeat=0).  
